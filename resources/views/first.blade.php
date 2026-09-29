@@ -9,6 +9,8 @@
 <body>
     <h1>Привет, мир!</h1>
     <a href="/">главная</a>
-    <p>Сумма чисел {{$a}} и {{$b}} равна {{$c}}</p>
+    @foreach ($array as $item)
+        <p>{{$item}}</p>
+    @endforeach
 </body>
 </html>
