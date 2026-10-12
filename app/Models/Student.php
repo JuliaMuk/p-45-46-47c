@@ -16,4 +16,10 @@ class Student extends Model
         'birthday'
     ];
     // protected $guarded = [];
+
+    public function fulName()
+    {
+        return $this->lastname . " " . $this->firstname . " " .$this->middlename;
+    }
+
 }

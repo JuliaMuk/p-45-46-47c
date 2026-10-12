@@ -24,6 +24,13 @@
                         @method('DELETE')
                         <input type="submit" value="Удалить">
                     </form>
+                    <a href="{{ route('students.show',$student->id) }}">
+                        Просмотреть
+                    </a>
+                    <a href="{{ route('students.edit',$student->id) }}">
+                        Редактировать
+                    </a>
+
                 </div>
             @endforeach
         </div>
