@@ -19,6 +19,8 @@
                         {{$student->lastname}}
                     </h2>
                     <p>{{$student->birthday}}</p>
+                    <p>Email: {{$student->user->email ?? 'нет'}}</p>
+                    <p>Группа: {{$student->group->title ?? 'нет'}}</p>
                     <form action="{{ route('students.destroy',$student->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
@@ -32,6 +34,15 @@
                     </a>
 
                 </div>
+            @endforeach
+        </div>
+        <hr>
+        <div>
+            @foreach ($groups as $group)
+                <h3>{{$group->title}}</h3>
+                @foreach ($group->students as $student)
+                    <p>{{$student->fulName()}}</p>                    
+                @endforeach
             @endforeach
         </div>
     </div>
