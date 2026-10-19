@@ -9,7 +9,13 @@
 <body>
     <div class="container mx-auto">
         <h1>{{$student->fulName()}}</h1>
-        <p>Дата рождения: {{$student->birthday}}</p>        
+        <p>Дата рождения: {{$student->birthday}}</p> 
+        <p>Предметы:</p>
+        <div>
+            @foreach ($student->subjects as $subject)
+                <p>{{$subject->title}}: {{$subject->pivot->mark}}</p>
+            @endforeach
+        </div>       
     </div>
 </body>
 </html>
