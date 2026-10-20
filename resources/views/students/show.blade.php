@@ -10,7 +10,7 @@
     <div class="container mx-auto">
         <h1>{{$student->fulName()}}</h1>
         <p>Дата рождения: {{$student->birthday}}</p> 
-        <p>Предметы:</p>
+        <p class="text-avocado-200">Предметы:</p>
         <div>
             @foreach ($student->subjects as $subject)
                 <p>{{$subject->title}}: {{$subject->pivot->mark}}</p>
